@@ -74,7 +74,7 @@ with io.open(CSV_FILE_NAME, 'r') as csvfile, io.open(NEW_CSV_FILE_NAME, 'w') as 
                 h = html2text.HTML2Text()
                 markdown_col = h.handle(col)
                 my_row.append(markdown_col)
-                with io.open(title + ".md", 'w') as writecontentfile:
+                with io.open(title + ".md", 'a') as writecontentfile:
                     writecontentfile.write(markdown_col)
             else:
                 my_row.append(col)
